@@ -1,12 +1,8 @@
-resource "yandex_vpc_network" "network" {
-  name = "Network"
-}
-
-resource "yandex_vpc_subnet" "subnet" {
-  name           = "my-subnet" 
-  zone           = var.YaCloud.default_zone
-  network_id     = yandex_vpc_network.network.id
-  v4_cidr_blocks = var.YaCloud.default_cidr
+resource "yandex_kms_symmetric_key" "porsev-key" {
+  name                = "porsev.key"
+  description         = "The test key."
+  default_algorithm   = "AES_128"
+  rotation_period     = "8760h"
 }
 
 resource "yandex_iam_service_account" "sa-test" {
