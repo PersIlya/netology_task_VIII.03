@@ -1,0 +1,9 @@
+temp/
+conf/personal*
+conf/outputs.tf
+conf/providers.tf
+conf/terraform.tfstat*
+conf/terraform.tfstate.backup
+conf/terraform.*
+conf/.*
+conf/.*/
